@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2669153-319c-4582-9ce7-60531ff88abb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Turn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/GridOrientation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Mutation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/91/3d89b2cf/Math.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.15f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.2d.tilemap/Editor/GridPaintPaletteClipboard.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A3947FE-34A6-499A-A6AB-6B20FE95EBAC/a1/85593b26/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticBot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Gene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/DNABase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Population.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotIntelligences/TypeAlpha/TypeAlpha.Genes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Farm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/FarmObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/ba/f41d2c32/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Defaults.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Reflection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Master.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/RandMe.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotIntelligences/TypeAlpha/TypeAlpha.Bot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/HexWorldMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/DisplayMode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FE84F4A7-54DA-4A6B-B64F-CA409D40938A/c1/cfc7727a/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtifitialFarm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Artificial.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Farm/IMapCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Farm/Farm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Farm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/DisplayMode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/IGeneticBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneRole.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/MapGrid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/GridOrientation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Turn.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/RandUtil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/RandUtil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/IGene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/StandardCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/ICell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/BoolLine2Drawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmLooping.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/FieldLoopBoolsDrawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/HexWorldMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotIntelligences/OrganismA/OrganismA.Bot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/StaticGenes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneAttribute.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Master.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Reflection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Mutation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Defaults.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/RandMe.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Gene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/DNABase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Farm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotIntelligences/TypeAlpha/TypeAlpha.Bot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Population.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotIntelligences/TypeAlpha/TypeAlpha.Genes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/FarmObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hHzuI5S6IaBzEWjkE5IHdcFOG3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008045" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2669153-319c-4582-9ce7-60531ff88abb" name="Default Changelist" comment="" />
+      <created>1599683044658</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599683044658</updated>
+      <workItem from="1599683060759" duration="928000" />
+      <workItem from="1599770348381" duration="44744000" />
+      <workItem from="1601725980457" duration="15107000" />
+      <workItem from="1606516739946" duration="28096000" />
+      <workItem from="1607014723149" duration="16488000" />
+      <workItem from="1607577450912" duration="9922000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2517" height="388" key="GridCell.Tab.0.bottom" timestamp="1607071315504">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601997953961" />
+    <state width="2517" height="388" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315504" />
+    <state width="2517" height="388" key="GridCell.Tab.0.center" timestamp="1607071315504">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1601997953959" />
+    <state width="2517" height="388" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315504" />
+    <state width="2517" height="388" key="GridCell.Tab.0.left" timestamp="1607071315504">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1601997953954" />
+    <state width="2517" height="388" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315504" />
+    <state width="2517" height="388" key="GridCell.Tab.0.right" timestamp="1607071315504">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1601997953960" />
+    <state width="2517" height="388" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315504" />
+    <state width="2517" height="388" key="GridCell.Tab.1.bottom" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601997953967" />
+    <state width="2517" height="388" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1601747314116" />
+    <state width="2517" height="388" key="GridCell.Tab.1.center" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1601997953963" />
+    <state width="2517" height="388" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="1398" height="293" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1601747314110" />
+    <state width="2517" height="388" key="GridCell.Tab.1.left" timestamp="1607071315504">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1601997953962" />
+    <state width="2517" height="388" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315504" />
+    <state width="1398" height="293" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1601747314100" />
+    <state width="2517" height="388" key="GridCell.Tab.1.right" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1601997953964" />
+    <state width="2517" height="388" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="1398" height="293" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1601747314113" />
+    <state width="2517" height="388" key="GridCell.Tab.2.bottom" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601997953974" />
+    <state width="2517" height="388" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="2517" height="388" key="GridCell.Tab.2.center" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1601997953970" />
+    <state width="2517" height="388" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="2517" height="388" key="GridCell.Tab.2.left" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1601997953968" />
+    <state width="2517" height="388" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="2517" height="388" key="GridCell.Tab.2.right" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1601997953971" />
+    <state width="2517" height="388" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="2517" height="388" key="GridCell.Tab.3.bottom" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.3.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601997953981" />
+    <state width="2517" height="388" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="2517" height="388" key="GridCell.Tab.3.center" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.3.center/0.0.1440.900@0.0.1440.900" timestamp="1601997953978" />
+    <state width="2517" height="388" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="2517" height="388" key="GridCell.Tab.3.left" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.3.left/0.0.1440.900@0.0.1440.900" timestamp="1601997953977" />
+    <state width="2517" height="388" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state width="2517" height="388" key="GridCell.Tab.3.right" timestamp="1607071315505">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1601997953980" />
+    <state width="2517" height="388" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1607071315505" />
+    <state x="320" y="189" key="Rider.ProjectTemplateDialog.Size" timestamp="1600001844861">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="189" key="Rider.ProjectTemplateDialog.Size/0.0.1440.900@0.0.1440.900" timestamp="1600001844861" />
+    <state x="972" y="121" key="RiderGenerateDialog" timestamp="1607621360605">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="547" y="78" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1601744449844" />
+    <state x="972" y="121" key="RiderGenerateDialog/0.0.2560.1400/2560.349.1920.1080@0.0.2560.1400" timestamp="1607621360605" />
+    <state x="972" y="121" key="RiderGenerateDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606570440482" />
+    <state x="917" y="251" key="SettingsEditor" timestamp="1606554746777">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="229" y="99" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1599913103112" />
+    <state x="917" y="251" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1606554746777" />
+    <state x="692" y="336" width="1176" height="728" key="find.popup" timestamp="1607074095955">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="389" y="216" width="661" height="468" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1601741934039" />
+    <state x="692" y="336" width="1176" height="728" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1607074095955" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1601738634822">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1601738634822" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="ArtificialFarm.BotIntelligences.OrganismA" fieldName="Cell" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
