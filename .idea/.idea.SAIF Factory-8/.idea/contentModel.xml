@@ -16,13 +16,22 @@
                 <e p="TypeAlpha.cs" t="Include" />
               </e>
               <e p="Genetic" t="Include">
+                <e p="DNABase.cs" t="Include" />
                 <e p="Gene.cs" t="Include" />
                 <e p="GeneAttribute.cs" t="Include" />
+                <e p="GeneticBot.cs" t="Include" />
                 <e p="GeneticCore.cs" t="Include" />
                 <e p="Genome.cs" t="Include" />
                 <e p="Mutation.cs" t="Include" />
               </e>
               <e p="IBot.cs" t="Include" />
+              <e p="Population.cs" t="Include" />
+            </e>
+            <e p="BotIntelligences" t="Include">
+              <e p="TypeAlpha" t="Include">
+                <e p="TypeAlpha.Bot.cs" t="Include" />
+                <e p="TypeAlpha.Genes.cs" t="Include" />
+              </e>
             </e>
             <e p="Core" t="Include">
               <e p="Defaults.cs" t="Include" />
@@ -30,16 +39,21 @@
               <e p="FarmSettings.cs" t="Include" />
               <e p="Population.cs" t="Include" />
             </e>
+            <e p="Defaults.cs" t="Include" />
+            <e p="Farm.cs" t="Include" />
             <e p="FarmMap" t="Include">
               <e p="Cell.cs" t="Include" />
               <e p="CellContentType.cs" t="Include" />
               <e p="DisplayMode.cs" t="Include" />
+              <e p="FarmObject.cs" t="Include" />
               <e p="GridOrientation.cs" t="Include" />
               <e p="HexWorldMap.cs" t="Include" />
               <e p="Size.cs" t="Include" />
               <e p="Turn.cs" t="Include" />
               <e p="WorldMap.cs" t="Include" />
             </e>
+            <e p="FarmSettings.cs" t="Include" />
+            <e p="FarmUI.cs" t="Include" />
             <e p="UI" t="Include">
               <e p="Farm.cs" t="Include" />
               <e p="FarmUI.cs" t="Include" />

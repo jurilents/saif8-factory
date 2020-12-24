@@ -13,7 +13,11 @@ namespace ArtificialFarm.FarmMap
         }
 
 
+<<<<<<< HEAD
         public override IEnumerable<Vector3Int> GetNeighbors(in Vector3Int pos)
+=======
+        public override IReadOnlyList<Vector3Int> GetNeighbors(in Vector3Int pos)
+>>>>>>> parent of 7347170... v0.1.0
         {
             return pos.y % 2 == 0
                 ? new List<Vector3Int>

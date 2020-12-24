@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+<<<<<<< HEAD
 using ArtificialFarm.Core;
+=======
+>>>>>>> parent of 7347170... v0.1.0
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
@@ -28,7 +31,11 @@ namespace ArtificialFarm.FarmMap
         /// </summary>
         /// <param name="pos"></param>
         /// <returns></returns>
+<<<<<<< HEAD
         public abstract IEnumerable<Vector3Int> GetNeighbors(in Vector3Int pos);
+=======
+        public abstract IReadOnlyList<Vector3Int> GetNeighbors(in Vector3Int pos);
+>>>>>>> parent of 7347170... v0.1.0
 
 
         /// <summary>
@@ -42,7 +49,11 @@ namespace ArtificialFarm.FarmMap
 
         protected WorldMap(Tilemap tilemap, TileBase tile, Size size)
         {
+<<<<<<< HEAD
             if (tile is null) throw new ArgumentNullException();
+=======
+            if (tile == null) throw new ArgumentNullException();
+>>>>>>> parent of 7347170... v0.1.0
             _tilemap = tilemap ? tilemap : throw new ArgumentNullException();
 
             _size = size;
