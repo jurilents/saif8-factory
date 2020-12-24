@@ -22,12 +22,9 @@
 # Visual Studio cache directory
 .vs/
 
-<<<<<<< HEAD
-=======
 # JetBrains Rider cache directory
 .idea/
 
->>>>>>> parent of 7347170... v0.1.0
 # Gradle cache directory
 .gradle/
 
