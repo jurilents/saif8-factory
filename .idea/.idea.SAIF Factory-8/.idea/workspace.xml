@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fdab5492-d2e1-4e99-993b-0394f62500db" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Turn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Master.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticCore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Mutation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///WorldMap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///RandMe.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Gene.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///GridOrientation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///IBot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///HexWorldMap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Population.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///ArtificialFarm.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///DisplayMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/FarmUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/CellContentType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Genome.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Bot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Master.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///GeneAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Cell.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Reflection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Size.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/FarmUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/FarmControls.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Master.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Farm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/FarmObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/CellContentType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/DNABase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotIntelligences/TypeAlpha/TypeAlpha.Genes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/DNAImplementations.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/IBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Bot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Population.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticCore.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Population.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lsSe5GXuaDD9vnWhLJDIRlC4cO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdab5492-d2e1-4e99-993b-0394f62500db" name="Default Changelist" comment="" />
+      <created>1608384399125</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608384399125</updated>
+      <workItem from="1608384413168" duration="2387000" />
+      <workItem from="1608710538741" duration="21837000" />
+    </task>
+    <task id="LOCAL-00001" summary="v0.1.0">
+      <created>1608795401664</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608795401664</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="v0.1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.1.0" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1608799594044">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1608799594044" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400/2560.0.1920.1080@2560.0.1920.1080" timestamp="1608799037597" />
+    <state x="910" y="460" key="MultipleFileMergeDialog" timestamp="1608798772182">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="910" y="460" key="MultipleFileMergeDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1608798772182" />
+    <state x="990" y="306" key="RiderGenerateDialog" timestamp="1608738873372">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="990" y="306" key="RiderGenerateDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1608738873372" />
+    <state x="781" y="344" key="SettingsEditor" timestamp="1608799733942">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="344" key="SettingsEditor/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1608799733942" />
+    <state x="1131" y="309" width="1153" height="1379" key="dock-window-1" timestamp="1608799037597">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1131" y="309" width="1153" height="1379" key="dock-window-1/0.0.2560.1400/2560.0.1920.1080@2560.0.1920.1080" timestamp="1608799037597" />
+    <state x="959" y="437" width="642" height="526" key="find.popup" timestamp="1608745230252">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="959" y="437" width="642" height="526" key="find.popup/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1608745230252" />
+  </component>
+</project>
