@@ -15,7 +15,7 @@ namespace ArtificialFarm.UI
     {
         public WorldMap Map { get; private set; }
         public Population Pop { get; private set; }
-        public Dictionary<string, GeneticCore> Dna { get; private set; }
+        public Dictionary<Type, GeneticCore> Dna { get; private set; }
 
 
         private FarmUI _ui;
@@ -30,7 +30,7 @@ namespace ArtificialFarm.UI
         {
             _ui = GetComponent<FarmUI>();
             Pop = new Population(_ui.Size.Summary);
-            Dna = new Dictionary<string, GeneticCore>();
+            Dna = new Dictionary<Type, GeneticCore>();
 
             FarmSettings.DisplayMode = _ui.displayMode;
             FarmSettings.Current = this;

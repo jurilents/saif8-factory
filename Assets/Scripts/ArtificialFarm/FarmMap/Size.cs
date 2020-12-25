@@ -11,11 +11,7 @@ namespace ArtificialFarm.FarmMap
 
         public bool LoopByY { get; }
 
-<<<<<<< HEAD
         public int Summary => Width * Height;
-
-=======
->>>>>>> parent of 7347170... v0.1.0
 
         public Size(int w, int h, bool loopX = false, bool loopY = false)
         {

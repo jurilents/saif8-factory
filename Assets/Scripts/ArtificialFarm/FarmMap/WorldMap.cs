@@ -2,10 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-<<<<<<< HEAD
 using ArtificialFarm.Core;
-=======
->>>>>>> parent of 7347170... v0.1.0
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
@@ -23,19 +20,18 @@ namespace ArtificialFarm.FarmMap
 
         private readonly Size _size;
 
+        /// <summary>
+        /// Map size info (width and height)
+        /// </summary>
         public Size Size => _size;
 
 
         /// <summary>
-        /// 
+        /// To get all neighbored positions inside world map bounds
         /// </summary>
-        /// <param name="pos"></param>
-        /// <returns></returns>
-<<<<<<< HEAD
+        /// <param name="pos">Base position</param>
+        /// <returns>Collection of all neighbored existing positions</returns>
         public abstract IEnumerable<Vector3Int> GetNeighbors(in Vector3Int pos);
-=======
-        public abstract IReadOnlyList<Vector3Int> GetNeighbors(in Vector3Int pos);
->>>>>>> parent of 7347170... v0.1.0
 
 
         /// <summary>
@@ -49,11 +45,7 @@ namespace ArtificialFarm.FarmMap
 
         protected WorldMap(Tilemap tilemap, TileBase tile, Size size)
         {
-<<<<<<< HEAD
             if (tile is null) throw new ArgumentNullException();
-=======
-            if (tile == null) throw new ArgumentNullException();
->>>>>>> parent of 7347170... v0.1.0
             _tilemap = tilemap ? tilemap : throw new ArgumentNullException();
 
             _size = size;
@@ -78,7 +70,7 @@ namespace ArtificialFarm.FarmMap
 
 
         /// <summary>
-        /// 
+        /// Display all actually cell colors on the farm tilemap
         /// </summary>
         public void Refresh()
         {
@@ -119,9 +111,9 @@ namespace ArtificialFarm.FarmMap
 
 
         /// <summary>
-        /// 
+        /// To randomly get any farm grid cell
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Any existing cell without content</returns>
         public Cell GetRandomEmptyCell()
         {
             Cell cell;
@@ -132,7 +124,7 @@ namespace ArtificialFarm.FarmMap
                     Random.Range(0, Size.Height - 1),
                     BASE_Z
                 ));
-            } while (cell.Bot != null);
+            } while (cell.Content != null);
 
             return cell;
         }

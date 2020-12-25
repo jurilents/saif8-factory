@@ -1,4 +1,5 @@
 using ArtificialFarm.FarmMap;
+using UnityEngine;
 
 namespace ArtificialFarm.Core
 {
@@ -7,16 +8,23 @@ namespace ArtificialFarm.Core
     /// </summary>
     public abstract class FarmObject
     {
+        private static uint _summaryIdIter = 100;
+
         public uint Id { get; }
 
-        protected internal Population Pop { get; }
-        protected internal WorldMap Map { get; }
-        protected internal Cell Cell { get; set; }
-        protected internal Turn Turn { get; }
+        public Population Pop { get; }
+        public WorldMap Map { get; }
+        public Cell Cell { get; set; }
+        public Turn Turn { get; }
 
 
-        public FarmObject()
+        public abstract Color OnDisplay(DisplayMode mode);
+
+
+        protected FarmObject()
         {
+            Id = _summaryIdIter++;
+
             Id = FarmSettings.SummaryPopulation++;
             Pop = FarmSettings.Current.Pop;
             Map = FarmSettings.Current.Map;
