@@ -24,8 +24,6 @@ namespace ArtificialFarm.Core
         protected FarmObject()
         {
             Id = _summaryIdIter++;
-
-            Id = FarmSettings.SummaryPopulation++;
             Pop = FarmSettings.Current.Pop;
             Map = FarmSettings.Current.Map;
             Turn = new Turn(-1);

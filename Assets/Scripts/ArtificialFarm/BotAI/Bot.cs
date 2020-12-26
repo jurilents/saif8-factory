@@ -1,7 +1,9 @@
+using System.Linq;
 using ArtificialFarm.BotAI.Genetic;
 using ArtificialFarm.Core;
 using ArtificialFarm.FarmMap;
 using UnityEngine;
+using Utilities;
 
 namespace ArtificialFarm.BotAI
 {
@@ -18,7 +20,7 @@ namespace ArtificialFarm.BotAI
         /// <summary>
         /// 
         /// </summary>
-        public bool IsAlive { get; private set; }
+        public bool IsAlive { get; private set; } = true;
 
         /// <summary>
         /// 
@@ -31,10 +33,12 @@ namespace ArtificialFarm.BotAI
         /// </summary>
         public void OnStep()
         {
-            Genome.Next().Apply(this);
-
             IsAlive = Energy > 0 && Age < 25;
-            if (IsAlive) Age++;
+            if (IsAlive)
+            {
+                Age++;
+                Genome.Next().Apply(this);
+            }
             else Age--;
         }
 
@@ -66,21 +70,30 @@ namespace ArtificialFarm.BotAI
         /// 
         /// </summary>
         /// <param name="parents"></param>
-        public void OnBirth(IBot[] parents)
+        /// <returns>Does operation was succeeded</returns>
+        public bool OnBirth(IBot[] parents)
         {
-            if (parents.Length < 1)
+            if (parents is null)
             {
                 Cell = Map.GetRandomEmptyCell();
                 Genome = new Genome();
-                Genome.InitRandomly<Bot>();
             }
             else
             {
-                Debug.Log("New burn!");
+                var mother = parents[0];
+
+                var emptyNeighboured = Map.GetNeighbors(mother.Cell.Pos)
+                    .Select(n => Map.GetCell(n))
+                    .Where(c => c.ContentType is CellContentType.Void).ToList();
+                if (emptyNeighboured.Count == 0) return false;
+
+                Cell = RandMe.RandItem(emptyNeighboured);
+                Genome = new Genome(mother.Genome);
             }
 
             Cell.SetContent(CellContentType.Organism, this);
             Energy = 50;
+            return true;
         }
 
         /// <summary>
@@ -91,10 +104,9 @@ namespace ArtificialFarm.BotAI
         {
             // Cell.Bot = null;
             Cell.SetContent(CellContentType.DeadBody);
-            Cell = null;
 
-            string killerName = killer is null ? "age factor" : killer.ToString();
-            Debug.Log($"{this} was killed via {killerName}");
+            string killerName = killer is null ? "age factor or exhaustion" : killer.ToString();
+            // Debug.Log($"{this} was killed via {killerName}");
         }
 
 

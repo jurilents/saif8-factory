@@ -1,3 +1,4 @@
+using System;
 using ArtificialFarm.FarmMap;
 using ArtificialFarm.UI;
 using UnityEngine;
@@ -27,5 +28,7 @@ namespace ArtificialFarm.Core
             get => _waitingTime ?? (_waitingTime = Defaults.WaitSeconds);
             set => _waitingTime = value;
         }
+
+        public static Type DefaultGenes { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace ArtificialFarm.BotAI
         bool IsGhost { get; }
 
         void OnStep();
-        void OnBirth(params IBot[] parents);
+        bool OnBirth([CanBeNull] params IBot[] parents);
         void OnDeath([CanBeNull] IBot killer);
     }
 }

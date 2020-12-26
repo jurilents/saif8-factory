@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using ArtificialFarm.BotAI.DNAImplementations;
 using ArtificialFarm.BotAI.Genetic;
 using ArtificialFarm.Core;
 using ArtificialFarm.FarmMap;
@@ -28,9 +29,9 @@ namespace ArtificialFarm.UI
         /// </summary>
         public void Init()
         {
+            Debug.Log("Starting farm initialization...");
+
             _ui = GetComponent<FarmUI>();
-            Pop = new Population(_ui.Size.Summary);
-            Dna = new Dictionary<Type, GeneticCore>();
 
             FarmSettings.DisplayMode = _ui.displayMode;
             FarmSettings.Current = this;
@@ -56,6 +57,16 @@ namespace ArtificialFarm.UI
                     throw new ArgumentOutOfRangeException
                         (nameof(_ui.TileOrientation), _ui.TileOrientation, null);
             }
+
+            Dna = new Dictionary<Type, GeneticCore>();
+            Pop = new Population();
+            Pop.InitBotsPool(_ui.Size.Summary);
+
+            InjectBot<TypeAlpha>();
+
+            Debug.Log("Farm successfully initialized!");
+
+            Pop.Spawn<TypeAlpha>(5);
         }
 
 
@@ -64,6 +75,7 @@ namespace ArtificialFarm.UI
         /// </summary>
         public void Play()
         {
+            Debug.Log("EVENT: Play");
             _play = true;
             StartCoroutine(LifeLoop());
         }
@@ -73,6 +85,7 @@ namespace ArtificialFarm.UI
         /// </summary>
         public void Pause()
         {
+            Debug.Log("EVENT: Pause");
             _play = false;
         }
 
@@ -81,6 +94,7 @@ namespace ArtificialFarm.UI
         /// </summary>
         public void Stop()
         {
+            Debug.Log("EVENT: Stop");
             _play = false;
             _step = 0;
         }
@@ -91,47 +105,51 @@ namespace ArtificialFarm.UI
         /// </summary>
         private IEnumerator LifeLoop()
         {
+            Debug.Log("Farm life loop is running");
+
             while (_play)
             {
                 var watch = new Stopwatch();
                 watch.Start();
 
                 _step++;
-                _ui.UpdateStepField(_step);
-                _ui.UpdatePopField(Pop.Count);
+
+                Pop.ApplyChanges();
 
                 foreach (var bot in Pop)
                 {
-                    bot.OnStep();
-                    if (!bot.IsAlive) Pop.Kill(bot);
+                    if (bot.IsAlive) bot.OnStep();
+                    else Pop.Kill(bot);
                 }
 
-                Pop.ApplyChanges();
                 Map.Refresh();
 
                 watch.Stop();
 
                 // Debug.Log($"=============== {_step} # {watch.ElapsedMilliseconds}ms ===============" +
-                // $"\nPopulation: {Pop.Count}");
+                //           $"\nPopulation: {Pop.Count}");
 
+                _ui.UpdateStepField(_step);
+                _ui.UpdatePopField(Pop.Count);
+                
+                if (Pop.Count == 0)
+                {
+                    Debug.LogWarning("Zero population.");
+                    yield break;
+                }
+                
                 yield return FarmSettings.StepWaitingTime;
             }
         }
 
 
-        // private void InjectBot<TBot>() where TBot : IBot, new()
-        // {
-        //     var mutation = new Mutation(_ui.mutationChance, _ui.mutationsCount);
-        //     if (_ui.mutationsCount > 0) mutation.Enabled = true;
-        //
-        //     var dnaBase = new DNABase(typeof(TBot), _ui.dnaLength, mutation);
-        //     Dna.Add(typeof(TBot), dnaBase);
-        //
-        //     for (int i = 0; i < _ui.startPopulation; i++)
-        //     {
-        //         var bot = new TBot();
-        //         Pop.Birth(bot);
-        //     }
-        // }
+        private void InjectBot<TBot>() where TBot : IDNA
+        {
+            var mutation = new Mutation(_ui.mutationChance, _ui.mutationsCount);
+            if (_ui.mutationsCount > 0) mutation.Enabled = true;
+
+            var geneticCore = new GeneticCore(typeof(TBot), _ui.dnaLength, mutation);
+            Dna.Add(typeof(TBot), geneticCore);
+        }
     }
 }

@@ -20,6 +20,7 @@
                 <e p="GeneAttribute.cs" t="Include" />
                 <e p="GeneticCore.cs" t="Include" />
                 <e p="Genome.cs" t="Include" />
+                <e p="IDNA.cs" t="Include" />
                 <e p="Mutation.cs" t="Include" />
               </e>
               <e p="IBot.cs" t="Include" />

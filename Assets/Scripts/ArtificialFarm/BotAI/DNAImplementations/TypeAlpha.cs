@@ -1,14 +1,12 @@
-﻿using System.Linq;
-using ArtificialFarm.BotAI.Genetic;
+﻿using ArtificialFarm.BotAI.Genetic;
 using UnityEngine;
-using Utilities;
 
 namespace ArtificialFarm.BotAI.DNAImplementations
 {
-    public static class TypeAlpha
+    public abstract class TypeAlpha : IDNA
     {
         [Gene("movement", "mvf")]
-        static void MoveForward(Bot bot)
+        public static void MoveForward(Bot bot)
         {
             var newCell = bot.Map.Move(bot.Cell, bot.Turn);
             if (newCell.Content is null) bot.Cell = newCell;
@@ -16,7 +14,7 @@ namespace ArtificialFarm.BotAI.DNAImplementations
         }
 
         [Gene("movement", "mvb")]
-        static void MoveBackward(Bot bot)
+        public static void MoveBackward(Bot bot)
         {
             bot.Turn.Inverse();
             var newCell = bot.Map.Move(bot.Cell, bot.Turn);
@@ -26,14 +24,14 @@ namespace ArtificialFarm.BotAI.DNAImplementations
         }
 
         [Gene("movement", "tnr")]
-        static void TurnRight(Bot bot)
+        public static void TurnRight(Bot bot)
         {
             bot.Turn.TurnRight();
             bot.Energy -= 5;
         }
 
         [Gene("movement", "tnl")]
-        static void TurnLeft(Bot bot)
+        public static void TurnLeft(Bot bot)
         {
             bot.Turn.TurnLeft();
             bot.Energy -= 5;
@@ -41,13 +39,13 @@ namespace ArtificialFarm.BotAI.DNAImplementations
 
 
         [Gene("eating", "sun")]
-        static void Photosynthesis(Bot bot)
+        public static void Photosynthesis(Bot bot)
         {
             bot.Energy += 20;
         }
 
         [Gene("eating", "eat")]
-        static void EatNeighbor(Bot bot)
+        public static void EatNeighbor(Bot bot)
         {
             var forwardCell = bot.Map.Move(bot.Cell, bot.Turn);
             var neighbor = (Bot) forwardCell.Content;
@@ -60,18 +58,11 @@ namespace ArtificialFarm.BotAI.DNAImplementations
 
 
         [Gene("reproduction", "div")]
-        static void DivisionReproduction(Bot bot)
+        public static void DivisionReproduction(Bot bot)
         {
             if (bot.Energy < 25 || bot.Age < 10) return;
 
-            var emptyNeighboured = bot.Map.GetNeighbors(bot.Cell.Pos)
-                .Select(n => bot.Map.GetCell(n)).Where(c => c.Bot is null).ToList();
-            if (emptyNeighboured.Count == 0) return;
-            var nbrCell = RandMe.RandItem(emptyNeighboured);
-
-            var child = new TypeAlpha(bot);
-            nbrCell.Bot = child;
-            bot.Pop.Birth(child);
+            bot.Pop.BirthChildFor(bot);
             bot.Energy -= 50;
         }
     }

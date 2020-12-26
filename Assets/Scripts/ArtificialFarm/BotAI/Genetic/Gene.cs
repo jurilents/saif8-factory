@@ -2,7 +2,7 @@ using System;
 
 namespace ArtificialFarm.BotAI.Genetic
 {
-    public delegate void GeneAction(object self);
+    public delegate void GeneAction(Bot bot);
 
     public struct Gene
     {

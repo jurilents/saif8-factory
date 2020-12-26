@@ -595,12 +595,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 538962118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbc59ce06564d2d9674af888201bd4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ba11ec1509243ea8ecd24f2cc89a4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilemap: {fileID: 638099516}
-  _tilePrefab: {fileID: 11400000, guid: 0f54c9ff101ae4a9ba5112baac8de351, type: 2}
-  _tileOrientation: 1
 --- !u!114 &538962121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,12 +611,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPopulation: 10
-  EnableTypeAlpha: 1
   displayMode: 2
-  _size: {x: 70, y: 60}
+  Tilemap: {fileID: 638099516}
+  TilePrefab: {fileID: 11400000, guid: 0f54c9ff101ae4a9ba5112baac8de351, type: 2}
+  TileOrientation: 1
+  _size: {x: 80, y: 60}
   _loopByX: 0
   _loopByY: 0
-  dnaLength: 32
+  dnaLength: 16
   mutationChance: 0.4
   mutationsCount: 2
   _stepField: {fileID: 260735867}
@@ -903,6 +902,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &886529891
 Canvas:
   m_ObjectHideFlags: 0
@@ -1041,6 +1041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1344,6 +1345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

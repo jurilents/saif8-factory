@@ -20,36 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdab5492-d2e1-4e99-993b-0394f62500db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/IDNA.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/DNABase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/DNABase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticBot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticBot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Gene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Gene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticCore.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Population.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Population.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Defaults.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Defaults.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Farm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Farm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Population.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Population.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/FarmObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/FarmObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/HexWorldMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/HexWorldMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmSettings.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Master.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Master.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Reflection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Reflection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +73,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/IDNA.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -96,32 +87,37 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/DNAImplementations.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/IBot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Bot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Population.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticCore.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Population.cs" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/HexWorldMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Master.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticBot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Farm.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/FarmObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/IDNA.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Gene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Master.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Reflection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/GeneticCore.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Genetic/Genome.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/IBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Population.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1lsSe5GXuaDD9vnWhLJDIRlC4cO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -160,7 +156,7 @@
       <workItem from="1608384413168" duration="2387000" />
       <workItem from="1608710538741" duration="21990000" />
       <workItem from="1608801719473" duration="7783000" />
-      <workItem from="1608844585720" duration="7138000" />
+      <workItem from="1608844585720" duration="22543000" />
     </task>
     <task id="LOCAL-00001" summary="v0.1.0">
       <created>1608795401664</created>
@@ -216,9 +212,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1131" y="309" width="1153" height="1379" key="dock-window-1/0.0.2560.1400/2560.0.1920.1080@2560.0.1920.1080" timestamp="1608799037597" />
-    <state x="816" y="332" width="940" height="764" key="find.popup" timestamp="1608803263658">
+    <state x="816" y="332" width="940" height="764" key="find.popup" timestamp="1608984096377">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="816" y="332" width="940" height="764" key="find.popup/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1608803263658" />
+    <state x="816" y="332" width="940" height="764" key="find.popup/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1608984096377" />
   </component>
 </project>

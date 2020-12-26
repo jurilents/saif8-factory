@@ -1,4 +1,5 @@
 using ArtificialFarm.Core;
+using UnityEngine;
 
 namespace ArtificialFarm.BotAI.Genetic
 {
@@ -8,15 +9,14 @@ namespace ArtificialFarm.BotAI.Genetic
         private byte[] _genes;
         private int _index;
 
-
-        public void InitRandomly<TBot>()
+        public Genome()
         {
-            _dnaBase = FarmSettings.Current.Dna[typeof(TBot)];
+            _dnaBase = FarmSettings.Current.Dna[FarmSettings.DefaultGenes];
             _genes = _dnaBase.GenerateGenome();
         }
 
 
-        public void InitFromParent(Genome parent)
+        public Genome(Genome parent)
         {
             _dnaBase = parent._dnaBase;
             _genes = (byte[]) parent._genes.Clone();

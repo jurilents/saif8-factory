@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 namespace ArtificialFarm.BotAI.Genetic
 {
-    public abstract class GeneticCore
+    public class GeneticCore
     {
         private Mutation _mutation;
 
@@ -30,8 +30,10 @@ namespace ArtificialFarm.BotAI.Genetic
             // Get only genes from own bot class
             var methodInfoList = Reflection.GetMethodsWithAttribute<GeneAttribute>(botType).ToList();
             int methodsCount = methodInfoList.Count;
+
+            string className = Reflection.GetTypeName(botType);
+            Debug.Log($"Applying genes [{className}] => {methodsCount}");
             if (methodsCount == 0) throw new ArrayTypeMismatchException();
-            Debug.Log("Genes count: " + methodsCount);
 
             _allGenes = new Gene[methodsCount];
 

@@ -31,7 +31,7 @@ namespace ArtificialFarm.FarmMap
         public void SetContent(CellContentType contentType, FarmObject farmObj = null)
         {
             ContentType = contentType;
-            Content = ContentType == CellContentType.Void ? null : farmObj;
+            Content = ContentType is CellContentType.Void ? null : farmObj;
         }
 
 

@@ -7,6 +7,6 @@ namespace ArtificialFarm.Core
     {
         internal const uint GenomeLength = 8;
         internal const DisplayMode DisplayMode = FarmMap.DisplayMode.Default;
-        internal static readonly WaitForSeconds WaitSeconds = new WaitForSeconds(0.1f);
+        internal static readonly WaitForSeconds WaitSeconds = new WaitForSeconds(0.01f);
     }
 }

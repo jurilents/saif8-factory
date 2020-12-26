@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ArtificialFarm.BotAI;
+using ArtificialFarm.BotAI.Genetic;
+using JetBrains.Annotations;
 
 namespace ArtificialFarm.Core
 {
@@ -25,15 +28,12 @@ namespace ArtificialFarm.Core
         /// First initialisation constructor with pre-building of all bots
         /// </summary>
         /// <param name="limit">Number of pre-build bots</param>
-        public Population(int limit)
+        public Population()
         {
             _aliveBots = new Dictionary<uint, IBot>();
             _reservePool = new Queue<IBot>();
             _birthNote = new Queue<(IBot, IBot[])>();
             _deathNote = new Queue<IBot>();
-
-            for (int i = 0; i < limit; i++)
-                _reservePool.Enqueue(new Bot());
         }
 
         public IEnumerator<IBot> GetEnumerator() => _aliveBots.Values.GetEnumerator();
@@ -49,28 +49,53 @@ namespace ArtificialFarm.Core
             {
                 bot.OnDeath(null);
                 _reservePool.Enqueue(bot);
-                // Debug.Log("BOT: " + bot.Cell);
-                // Debug.Log("CELL: " + cell.Bot);
+                _aliveBots.Remove(bot.Id);
             }
+
+            _deathNote.Clear();
 
             foreach (var (bot, parents) in _birthNote)
             {
-                bot.OnBirth(parents);
-                _aliveBots.Add(bot.Id, bot);
+                if (bot.OnBirth(parents))
+                    _aliveBots.Add(bot.Id, bot);
             }
 
             _birthNote.Clear();
         }
 
 
+        public void InitBotsPool(int limit)
+        {
+            if (limit < 1) throw new ArgumentOutOfRangeException();
+
+            for (int i = 0; i < limit; i++)
+                _reservePool.Enqueue(new Bot());
+        }
+
+
+        public void Spawn<TGenome>(ushort count = 1) where TGenome : IDNA
+        {
+            FarmSettings.DefaultGenes = typeof(TGenome);
+
+            for (int i = 0; i < count; i++)
+            {
+                var instance = _reservePool.Dequeue();
+                _birthNote.Enqueue((instance, null));
+            }
+        }
+
+
         /// <summary>
         /// Mark for further creation
         /// </summary>
-        /// <param name="bot"></param>
-        /// <param name="parents"></param>
-        public void Birth(IBot bot, params IBot[] parents)
+        /// <param name="parents">Parent bot(s) (at least one)</param>
+        public void BirthChildFor([NotNull] params IBot[] parents)
         {
-            if (bot != null) _birthNote.Enqueue((bot, parents));
+            if (parents.Length <= 0)
+                throw new ArgumentException("The child must have at least one parent");
+
+            var instance = _reservePool.Dequeue();
+            _birthNote.Enqueue((instance, parents));
         }
 
 
@@ -78,9 +103,9 @@ namespace ArtificialFarm.Core
         /// Mark for further destruction
         /// </summary>
         /// <param name="bot"></param>
-        public void Kill(IBot bot)
+        public void Kill([NotNull] IBot bot)
         {
-            if (bot != null) _deathNote.Enqueue(bot);
+            _deathNote.Enqueue(bot);
         }
     }
 }
