@@ -40,7 +40,7 @@ namespace ArtificialFarm.FarmMap
         /// <param name="from"></param>
         /// <param name="turn"></param>
         /// <returns></returns>
-        public abstract Cell Move(in Cell from, in Turn turn);
+        public abstract Cell GetCellByMove(Cell from, in Turn turn);
 
 
         protected WorldMap(Tilemap tilemap, TileBase tile, Size size)
@@ -100,9 +100,6 @@ namespace ArtificialFarm.FarmMap
         {
             if (IsInside(pos)) return _cells[pos.y, pos.x];
 
-            //TODO: Remove logging
-            // Debug.LogError($"Cannot raise cell: {pos}");
-
             // ReSharper disable once SuggestVarOrType_SimpleTypes
             Vector3Int posCopy = pos;
             MoveInside(ref posCopy);
@@ -135,55 +132,66 @@ namespace ArtificialFarm.FarmMap
         /// </summary>
         /// <param name="pos"></param>
         /// <returns></returns>
-        public bool IsInside(in Vector3Int pos) => IsInside(pos.x, pos.y);
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
-        public bool IsInside(int x, int y) =>
-            0 <= x && x < Size.Width && 0 <= y && y < Size.Height;
+        public bool IsInside(in Vector3Int pos) => IsInsideX(pos.x) && IsInsideY(pos.y);
 
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="pos"></param>
-        public void MoveInside(ref Vector3Int pos)
+        public void MoveInside(ref Vector3Int pos) =>
+            pos = new Vector3Int(MoveInsideX(pos.x), MoveInsideY(pos.y), BASE_Z);
+
+
+        private bool IsInsideX(in int x) => 0 <= x && x < Size.Width;
+
+        private bool IsInsideY(in int y) => 0 <= y && y < Size.Height;
+
+
+        public int MoveInsideX(int x)
         {
             int i = 100;
             while (i-- > 0)
             {
-                int newX = Size.LoopByX
-                    ? pos.x < 0
-                        ? pos.x + Size.Width
-                        : pos.x >= Size.Width
-                            ? pos.x - Size.Width
-                            : pos.x
-                    : pos.x < 0
-                        ? 0
-                        : pos.x >= Size.Width
-                            ? Size.Width - 1
-                            : pos.x;
+                x = Size.LoopByX
+                    ? x < 0
+                        ? x + Size.Width // x [ ... dx ]
+                        : x >= Size.Width
+                            ? x - Size.Width // [ dx ... ] x
+                            : x // [ ... x == dx ... ]
+                    : x < 0
+                        ? 0 // x [ dx ... ]
+                        : x >= Size.Width
+                            ? Size.Width - 1 // [ ... dx ] x
+                            : x; // [ ... x == dx ... ]
 
-                int newY = Size.LoopByY
-                    ? pos.y < 0
-                        ? pos.y + Size.Height
-                        : pos.y >= Size.Height
-                            ? pos.y - Size.Height
-                            : pos.y
-                    : pos.y < 0
-                        ? 0
-                        : pos.y >= Size.Height
-                            ? Size.Height - 1
-                            : pos.y;
-
-                pos = new Vector3Int(newY, newX, pos.z);
-                if (IsInside(pos)) break;
+                if (IsInsideX(x)) return x;
             }
+
+            throw new TimeoutException("Too many iterations exception!");
+        }
+
+        public int MoveInsideY(int y)
+        {
+            int i = 100;
+            while (i-- > 0)
+            {
+                y = Size.LoopByY
+                    ? y < 0
+                        ? y + Size.Height
+                        : y >= Size.Height
+                            ? y - Size.Height
+                            : y
+                    : y < 0
+                        ? 0
+                        : y >= Size.Height
+                            ? Size.Height - 1
+                            : y;
+
+                if (IsInsideY(y)) return y;
+            }
+
+            throw new TimeoutException("Too many iterations exception!");
         }
     }
 }

@@ -1,3 +1,4 @@
+using ArtificialFarm.BotAI;
 using ArtificialFarm.Core;
 using UnityEngine;
 
@@ -34,6 +35,21 @@ namespace ArtificialFarm.FarmMap
             Content = ContentType is CellContentType.Void ? null : farmObj;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bot"></param>
+        /// <returns></returns>
+        public bool AdoptNewBot(Bot bot)
+        {
+            if (!(ContentType is CellContentType.Void)) return false;
+
+            bot.Cell.SetContent(CellContentType.Void);
+            bot.Cell = this;
+            SetContent(CellContentType.Organism, bot);
+            return true;
+        }
+
 
         /// <summary>
         /// Get the color for a tile that matches the current cell
@@ -50,6 +66,6 @@ namespace ArtificialFarm.FarmMap
         /// To get default tile color (transparent => opacity is 0)
         /// </summary>
         /// <returns>Transparent color</returns>
-        private static Color Transparent() => new Color(0, 0, 255, 255);
+        private static Color Transparent() => new Color(0, 0, 128, 0.25f);
     }
 }

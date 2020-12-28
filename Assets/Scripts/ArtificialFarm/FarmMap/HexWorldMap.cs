@@ -12,7 +12,7 @@ namespace ArtificialFarm.FarmMap
         {
         }
 
-        
+
         public override IEnumerable<Vector3Int> GetNeighbors(in Vector3Int pos)
         {
             return pos.y % 2 == 0
@@ -37,67 +37,30 @@ namespace ArtificialFarm.FarmMap
         }
 
 
-        public override Cell Move(in Cell from, in Turn turn)
+        public override Cell GetCellByMove(Cell from, in Turn turn)
         {
             var pos = from.Pos;
-            Vector3Int newPos;
-
-            if (pos.y % 2 == 0)
-            {
-                switch (turn.side)
+            return GetCell(pos.y % 2 == 0
+                ? turn.Side switch
                 {
-                    case 0:
-                        newPos = new Vector3Int(pos.x - 1, pos.y + 1, BASE_Z);
-                        break;
-                    case 1:
-                        newPos = new Vector3Int(pos.x, pos.y + 1, BASE_Z);
-                        break;
-                    case 2:
-                        newPos = new Vector3Int(pos.x + 1, pos.y, BASE_Z);
-                        break;
-                    case 3:
-                        newPos = new Vector3Int(pos.x, pos.y - 1, BASE_Z);
-                        break;
-                    case 4:
-                        newPos = new Vector3Int(pos.x - 1, pos.y - 1, BASE_Z);
-                        break;
-                    case 5:
-                        newPos = new Vector3Int(pos.x - 1, pos.y, BASE_Z);
-                        break;
-                    default:
-                        throw new IndexOutOfRangeException(
-                            "Turn #" + turn + " was unexpected");
+                    0 => new Vector3Int(pos.x - 1, pos.y + 1, BASE_Z),
+                    1 => new Vector3Int(pos.x, pos.y + 1, BASE_Z),
+                    2 => new Vector3Int(pos.x + 1, pos.y, BASE_Z),
+                    3 => new Vector3Int(pos.x, pos.y - 1, BASE_Z),
+                    4 => new Vector3Int(pos.x - 1, pos.y - 1, BASE_Z),
+                    5 => new Vector3Int(pos.x - 1, pos.y, BASE_Z),
+                    _ => throw new IndexOutOfRangeException("Turn #" + turn + " was unexpected")
                 }
-            }
-            else
-            {
-                switch (turn.side)
+                : turn.Side switch
                 {
-                    case 0:
-                        newPos = new Vector3Int(pos.x, pos.y + 1, BASE_Z);
-                        break;
-                    case 1:
-                        newPos = new Vector3Int(pos.x + 1, pos.y + 1, BASE_Z);
-                        break;
-                    case 2:
-                        newPos = new Vector3Int(pos.x + 1, pos.y, BASE_Z);
-                        break;
-                    case 3:
-                        newPos = new Vector3Int(pos.x + 1, pos.y - 1, BASE_Z);
-                        break;
-                    case 4:
-                        newPos = new Vector3Int(pos.x, pos.y - 1, BASE_Z);
-                        break;
-                    case 5:
-                        newPos = new Vector3Int(pos.x - 1, pos.y, BASE_Z);
-                        break;
-                    default:
-                        throw new IndexOutOfRangeException(
-                            "Turn #" + turn + " was unexpected");
-                }
-            }
-
-            return GetCell(newPos);
+                    0 => new Vector3Int(pos.x, pos.y + 1, BASE_Z),
+                    1 => new Vector3Int(pos.x + 1, pos.y + 1, BASE_Z),
+                    2 => new Vector3Int(pos.x + 1, pos.y, BASE_Z),
+                    3 => new Vector3Int(pos.x + 1, pos.y - 1, BASE_Z),
+                    4 => new Vector3Int(pos.x, pos.y - 1, BASE_Z),
+                    5 => new Vector3Int(pos.x - 1, pos.y, BASE_Z),
+                    _ => throw new IndexOutOfRangeException("Turn #" + turn + " was unexpected")
+                });
         }
     }
 }

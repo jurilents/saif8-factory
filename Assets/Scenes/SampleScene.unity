@@ -615,10 +615,10 @@ MonoBehaviour:
   Tilemap: {fileID: 638099516}
   TilePrefab: {fileID: 11400000, guid: 0f54c9ff101ae4a9ba5112baac8de351, type: 2}
   TileOrientation: 1
-  _size: {x: 80, y: 60}
-  _loopByX: 0
-  _loopByY: 0
-  dnaLength: 16
+  _size: {x: 75, y: 60}
+  _loopByX: 1
+  _loopByY: 1
+  dnaLength: 5
   mutationChance: 0.4
   mutationsCount: 2
   _stepField: {fileID: 260735867}

@@ -37,7 +37,9 @@ namespace ArtificialFarm.BotAI
             if (IsAlive)
             {
                 Age++;
-                Genome.Next().Apply(this);
+                var gene = Genome.Next();
+                gene.Apply(this);
+                // Debug.Log($"GENE: {gene.Name}\nage:{Age} Pow:{Energy}");
             }
             else Age--;
         }
@@ -92,7 +94,7 @@ namespace ArtificialFarm.BotAI
             }
 
             Cell.SetContent(CellContentType.Organism, this);
-            Energy = 50;
+            Energy = 500;
             return true;
         }
 

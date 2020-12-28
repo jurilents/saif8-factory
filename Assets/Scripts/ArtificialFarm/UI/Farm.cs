@@ -62,16 +62,16 @@ namespace ArtificialFarm.UI
             Pop = new Population();
             Pop.InitBotsPool(_ui.Size.Summary);
 
-            InjectBot<TypeAlpha>();
+            InjectGenome<TypeAlpha>();
 
             Debug.Log("Farm successfully initialized!");
 
-            Pop.Spawn<TypeAlpha>(5);
+            Pop.Spawn<TypeAlpha>(50);
         }
 
 
         /// <summary>
-        /// 
+        /// Start life loop
         /// </summary>
         public void Play()
         {
@@ -81,7 +81,7 @@ namespace ArtificialFarm.UI
         }
 
         /// <summary>
-        /// 
+        /// Stop life loop
         /// </summary>
         public void Pause()
         {
@@ -90,7 +90,7 @@ namespace ArtificialFarm.UI
         }
 
         /// <summary>
-        /// 
+        /// Stop life loop and reset last generation
         /// </summary>
         public void Stop()
         {
@@ -101,7 +101,7 @@ namespace ArtificialFarm.UI
 
 
         /// <summary>
-        /// Main game cycle
+        /// Main loop to do iterations of life
         /// </summary>
         private IEnumerator LifeLoop()
         {
@@ -131,19 +131,23 @@ namespace ArtificialFarm.UI
 
                 _ui.UpdateStepField(_step);
                 _ui.UpdatePopField(Pop.Count);
-                
+
                 if (Pop.Count == 0)
                 {
                     Debug.LogWarning("Zero population.");
                     yield break;
                 }
-                
+
                 yield return FarmSettings.StepWaitingTime;
             }
         }
 
 
-        private void InjectBot<TBot>() where TBot : IDNA
+        /// <summary>
+        /// Append genotype to farm configuration
+        /// </summary>
+        /// <typeparam name="TBot">class implemented IDNA interface</typeparam>
+        private void InjectGenome<TBot>() where TBot : IDNA
         {
             var mutation = new Mutation(_ui.mutationChance, _ui.mutationsCount);
             if (_ui.mutationsCount > 0) mutation.Enabled = true;

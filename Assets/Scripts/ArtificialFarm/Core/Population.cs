@@ -5,6 +5,7 @@ using System.Linq;
 using ArtificialFarm.BotAI;
 using ArtificialFarm.BotAI.Genetic;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace ArtificialFarm.Core
 {
@@ -52,6 +53,8 @@ namespace ArtificialFarm.Core
                 _aliveBots.Remove(bot.Id);
             }
 
+            Debug.Log("Pool:" + _reservePool.Count);
+
             _deathNote.Clear();
 
             foreach (var (bot, parents) in _birthNote)
@@ -94,8 +97,12 @@ namespace ArtificialFarm.Core
             if (parents.Length <= 0)
                 throw new ArgumentException("The child must have at least one parent");
 
-            var instance = _reservePool.Dequeue();
-            _birthNote.Enqueue((instance, parents));
+            if (_reservePool.Count > 0)
+            {
+                var instance = _reservePool.Dequeue();
+                _birthNote.Enqueue((instance, parents));
+            }
+            else Debug.LogWarning("Population reserve pool is empty!");
         }
 
 
