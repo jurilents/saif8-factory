@@ -1,26 +1,42 @@
 using ArtificialFarm.BotAI;
 using ArtificialFarm.Core;
 using UnityEngine;
+using Utilities;
 
 namespace ArtificialFarm.FarmMap
 {
     /// <summary>
     /// Single farm map cell class
     /// </summary>
-    public class Cell
+    public class Cell : ICell
     {
         public Vector3Int Pos { get; }
 
         public CellContentType ContentType { get; private set; }
 
-        public FarmObject Content { get; private set; }
+        public IFarmObject Content { get; private set; }
+
+        public float SunModifier { get; }
+        public float MineralsModifier { get; }
 
 
-        public Cell(Vector3Int pos)
+        public Cell(Vector3Int pos, Size? mapSize = null)
         {
             Pos = pos;
             ContentType = CellContentType.Void;
             Content = null;
+
+            if (mapSize is null)
+            {
+                SunModifier = 1;
+                MineralsModifier = 0;
+            }
+            else
+            {
+                var ms = mapSize.Value;
+                SunModifier = ms.HF.ReLU(pos.y, 0.333f);
+                MineralsModifier = ms.HF.InverseReLU(pos.y, 0.333f);
+            }
         }
 
 
@@ -29,10 +45,10 @@ namespace ArtificialFarm.FarmMap
         /// </summary>
         /// <param name="contentType">Cell content type enum value</param>
         /// <param name="farmObj">Instance of the bot (if you need)</param>
-        public void SetContent(CellContentType contentType, FarmObject farmObj = null)
+        public void SetContent(CellContentType contentType, IFarmObject farmObj = null)
         {
             ContentType = contentType;
-            Content = ContentType is CellContentType.Void ? null : farmObj;
+            Content = farmObj;
         }
 
         /// <summary>
@@ -40,9 +56,9 @@ namespace ArtificialFarm.FarmMap
         /// </summary>
         /// <param name="bot"></param>
         /// <returns></returns>
-        public bool AdoptNewBot(Bot bot)
+        public bool AdoptNewBot(IBot bot)
         {
-            if (!(ContentType is CellContentType.Void)) return false;
+            if (ContentType != CellContentType.Void) return false;
 
             bot.Cell.SetContent(CellContentType.Void);
             bot.Cell = this;
@@ -51,21 +67,6 @@ namespace ArtificialFarm.FarmMap
         }
 
 
-        /// <summary>
-        /// Get the color for a tile that matches the current cell
-        /// </summary>
-        /// <param name="mode"></param>
-        /// <returns></returns>
-        public Color GetDisplayColor(DisplayMode mode)
-        {
-            if (Content is null) return Transparent();
-            return Content.OnDisplay(mode);
-        }
-
-        /// <summary>
-        /// To get default tile color (transparent => opacity is 0)
-        /// </summary>
-        /// <returns>Transparent color</returns>
-        private static Color Transparent() => new Color(0, 0, 128, 0.25f);
+        public override string ToString() => $"Cell[x:{Pos.x}, y={Pos.y}] ({Reflection.GetTypeName(ContentType)})";
     }
 }

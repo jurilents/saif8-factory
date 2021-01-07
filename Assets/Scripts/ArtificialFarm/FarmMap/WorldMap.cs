@@ -9,11 +9,11 @@ using Random = UnityEngine.Random;
 
 namespace ArtificialFarm.FarmMap
 {
-    public abstract class WorldMap : IEnumerable<Cell>
+    public abstract class WorldMap : IEnumerable<ICell>
     {
         protected const int BASE_Z = 0;
 
-        protected readonly Cell[,] _cells;
+        protected readonly ICell[,] _cells;
 
         private readonly Tilemap _tilemap;
         // private readonly Tile _tilePrefab;
@@ -40,7 +40,7 @@ namespace ArtificialFarm.FarmMap
         /// <param name="from"></param>
         /// <param name="turn"></param>
         /// <returns></returns>
-        public abstract Cell GetCellByMove(Cell from, in Turn turn);
+        public abstract ICell GetCellByMove(ICell from, in Turn turn);
 
 
         protected WorldMap(Tilemap tilemap, TileBase tile, Size size)
@@ -49,12 +49,12 @@ namespace ArtificialFarm.FarmMap
             _tilemap = tilemap ? tilemap : throw new ArgumentNullException();
 
             _size = size;
-            _cells = new Cell[_size.Height, _size.Width];
+            _cells = new ICell[_size.Height, _size.Width];
 
             for (int y = 0; y < _size.Height; y++)
             for (int x = 0; x < _size.Width; x++)
             {
-                var cell = new Cell(new Vector3Int(x, y, BASE_Z));
+                var cell = new Cell(new Vector3Int(x, y, BASE_Z), _size);
                 // Define tile in global array
                 _cells[y, x] = cell;
                 // Display current time on the tilemap
@@ -65,7 +65,7 @@ namespace ArtificialFarm.FarmMap
         }
 
         // To use in FOREACH loop
-        public IEnumerator<Cell> GetEnumerator() => _cells.Cast<Cell>().GetEnumerator();
+        public IEnumerator<ICell> GetEnumerator() => _cells.Cast<ICell>().GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 
@@ -76,7 +76,8 @@ namespace ArtificialFarm.FarmMap
         {
             foreach (var cell in _cells)
             {
-                var color = cell.GetDisplayColor(FarmSettings.DisplayMode);
+                var color = cell.Content?.OnDisplay(FarmSettings.DisplayMode)
+                            ?? Defaults.Transparent;
                 _tilemap.SetColor(cell.Pos, color);
             }
         }
@@ -88,7 +89,7 @@ namespace ArtificialFarm.FarmMap
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public Cell GetCell(int x, int y) => GetCell(new Vector3Int(x, y, 0));
+        public ICell GetCell(int x, int y) => GetCell(new Vector3Int(x, y, 0));
 
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace ArtificialFarm.FarmMap
         /// </summary>
         /// <param name="pos">Tile coords</param>
         /// <returns>Tile from position or throw error  if tile not found</returns>
-        public Cell GetCell(in Vector3Int pos)
+        public ICell GetCell(in Vector3Int pos)
         {
             if (IsInside(pos)) return _cells[pos.y, pos.x];
 
@@ -111,9 +112,9 @@ namespace ArtificialFarm.FarmMap
         /// To randomly get any farm grid cell
         /// </summary>
         /// <returns>Any existing cell without content</returns>
-        public Cell GetRandomEmptyCell()
+        public ICell GetRandomEmptyCell()
         {
-            Cell cell;
+            ICell cell;
             do
             {
                 cell = GetCell(new Vector3Int(

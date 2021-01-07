@@ -6,6 +6,7 @@ using ArtificialFarm.BotAI.DNAImplementations;
 using ArtificialFarm.BotAI.Genetic;
 using ArtificialFarm.Core;
 using ArtificialFarm.FarmMap;
+using Core.GraphTools;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -60,13 +61,13 @@ namespace ArtificialFarm.UI
 
             Dna = new Dictionary<Type, GeneticCore>();
             Pop = new Population();
-            Pop.InitBotsPool(_ui.Size.Summary);
+            Pop.InitBotsPool((int) (_ui.Size.Summary * 1.05f));
 
             InjectGenome<TypeAlpha>();
 
             Debug.Log("Farm successfully initialized!");
 
-            Pop.Spawn<TypeAlpha>(50);
+            Pop.Spawn<TypeAlpha>(3);
         }
 
 
@@ -107,6 +108,10 @@ namespace ArtificialFarm.UI
         {
             Debug.Log("Farm life loop is running");
 
+            var reserve = new List<float>();
+            var population = new List<float>();
+
+
             while (_play)
             {
                 var watch = new Stopwatch();
@@ -132,9 +137,23 @@ namespace ArtificialFarm.UI
                 _ui.UpdateStepField(_step);
                 _ui.UpdatePopField(Pop.Count);
 
+                reserve.Add(Pop.ReserveCount);
+                population.Add(Pop.Count);
+
                 if (Pop.Count == 0)
                 {
                     Debug.LogWarning("Zero population.");
+
+                    var obj = _ui.graphicContainer.gameObject;
+                    obj.SetActive(true);
+
+                    var graph = new GraphPanel(obj, 4500, 2);
+                    graph.SetLineColor(Color.cyan, 0);
+                    graph.AddPointsRange(reserve, 0);
+
+                    graph.SetLineColor(Color.red, 1);
+                    graph.AddPointsRange(population, 1);
+
                     yield break;
                 }
 

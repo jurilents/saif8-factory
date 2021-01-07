@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using ArtificialFarm.BotAI.Genetic;
 using ArtificialFarm.Core;
@@ -15,17 +16,17 @@ namespace ArtificialFarm.BotAI
         public Genome Genome { get; private set; }
 
         public ushort Age { get; private set; }
-        public float Energy { get; protected internal set; }
+        public float Energy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public bool IsAlive { get; private set; } = true;
+        public bool IsAlive { get; private set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public bool IsGhost { get; }
+        public bool IsGhost { get; private set; }
 
 
         /// <summary>
@@ -33,7 +34,7 @@ namespace ArtificialFarm.BotAI
         /// </summary>
         public void OnStep()
         {
-            IsAlive = Energy > 0 && Age < 25;
+            IsAlive = Energy > 0 && Age < 50;
             if (IsAlive)
             {
                 Age++;
@@ -58,9 +59,21 @@ namespace ArtificialFarm.BotAI
 
                 case DisplayMode.Energy:
                     if (!IsAlive) return Color.yellow;
-                    return new Color((byte) (Energy * 2.55), 0, 128, 255);
+                    byte val = (byte) (Energy / 120 * 255);
+                    // Debug.Log(val);
+                    return new Color32(val, 0, val, 255);
 
                 case DisplayMode.Diet:
+                    return Genome.Diet switch
+                    {
+                        Diet.PhotoPlant => new Color32(140, 181, 65, 255),
+                        Diet.MineralsPlant => new Color32(64, 165, 192, 255),
+                        Diet.HerbivAnimal => new Color32(227, 126, 50, 255),
+                        Diet.PredatorAnimal => new Color32(186, 82, 227, 255),
+                        // Diet.OmnivorAnimal => Color.magenta,
+                        _ => throw new ArgumentOutOfRangeException("Unexpected diet type: " + Genome.Diet)
+                    };
+
                 case DisplayMode.Health:
                 default:
                     return Color.red;
@@ -75,26 +88,36 @@ namespace ArtificialFarm.BotAI
         /// <returns>Does operation was succeeded</returns>
         public bool OnBirth(IBot[] parents)
         {
-            if (parents is null)
+            if (parents is null) // On first spawn
             {
                 Cell = Map.GetRandomEmptyCell();
                 Genome = new Genome();
             }
-            else
+            else // On birth from parent(s)
             {
                 var mother = parents[0];
 
-                var emptyNeighboured = Map.GetNeighbors(mother.Cell.Pos)
-                    .Select(n => Map.GetCell(n))
-                    .Where(c => c.ContentType is CellContentType.Void).ToList();
-                if (emptyNeighboured.Count == 0) return false;
+                // var emptyNeighboured = Map.GetNeighbors(mother.Cell.Pos)
+                //     .Select(n => Map.GetCell(n))
+                //     .Where(c => c.ContentType is CellContentType.Void).ToList();
+                // if (emptyNeighboured.Count == 0) return false;
+                // Cell = RandMe.RandItem(emptyNeighboured);
 
-                Cell = RandMe.RandItem(emptyNeighboured);
+                Cell = Map.GetCellByMove(mother.Cell, mother.Turn);
+                if (Cell.ContentType != CellContentType.Void)
+                {
+                    Cell = null;
+                    return false;
+                }
+
                 Genome = new Genome(mother.Genome);
             }
 
             Cell.SetContent(CellContentType.Organism, this);
-            Energy = 500;
+            Age = 0;
+            Energy = 120;
+            IsAlive = true;
+            IsGhost = false;
             return true;
         }
 
@@ -104,8 +127,7 @@ namespace ArtificialFarm.BotAI
         /// <param name="killer"></param>
         public void OnDeath(IBot killer)
         {
-            // Cell.Bot = null;
-            Cell.SetContent(CellContentType.DeadBody);
+            Cell.SetContent(CellContentType.Void);
 
             string killerName = killer is null ? "age factor or exhaustion" : killer.ToString();
             // Debug.Log($"{this} was killed via {killerName}");

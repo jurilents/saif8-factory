@@ -5,19 +5,14 @@ using JetBrains.Annotations;
 
 namespace ArtificialFarm.BotAI
 {
-    public interface IBot
+    public interface IBot : IFarmObject
     {
         uint Id { get; }
         ushort Age { get; }
-        float Energy { get; }
+        float Energy { get; set; }
 
         Genome Genome { get; }
 
-        Population Pop { get; }
-        WorldMap Map { get; }
-
-        Cell Cell { get; set; }
-        Turn Turn { get; }
 
         bool IsAlive { get; }
         bool IsGhost { get; }

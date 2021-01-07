@@ -15,8 +15,11 @@ namespace ArtificialFarm.BotAI.Genetic
         private readonly Gene[] _allGenes;
         private readonly Dictionary<ushort, Gene> _availableGenes;
 
+        private readonly float _dietCount;
+
         public int AvailableGenesCount => _availableGenes.Count;
         public uint DNALength { get; }
+
 
         public Gene this[byte id] => _availableGenes.ContainsKey(id)
             ? _availableGenes[id]
@@ -37,6 +40,7 @@ namespace ArtificialFarm.BotAI.Genetic
 
             _allGenes = new Gene[methodsCount];
 
+            // detect all methods which will be used as genes implementations
             for (var i = 0; i < methodsCount; i++)
             {
                 var methodInfo = methodInfoList[i];
@@ -47,6 +51,8 @@ namespace ArtificialFarm.BotAI.Genetic
 
             _mutation = mutation;
             _availableGenes = _allGenes.Where(g => g.Available).ToDictionary(g => g.Id);
+
+            _dietCount = Enum.GetValues(typeof(Diet)).Length - 1f;
         }
 
 
@@ -95,6 +101,14 @@ namespace ArtificialFarm.BotAI.Genetic
                 if (RandMe.TryLuck(_mutation.Chance))
                     genes[RandMe.RandIndex(genes)] = RandomGeneId();
             }
+        }
+
+        public float MutateDietValue(float dietValue, float addValue, float subValue)
+        {
+            if (!_mutation.Enabled) return dietValue;
+            if (RandMe.TryLuck(_mutation.Chance)) dietValue += addValue;
+            if (RandMe.TryLuck(_mutation.Chance)) dietValue -= subValue;
+            return Mathf.Clamp(dietValue, 0, _dietCount);
         }
 
         public byte RandomGeneId() => (byte) Random.Range(0, AvailableGenesCount);

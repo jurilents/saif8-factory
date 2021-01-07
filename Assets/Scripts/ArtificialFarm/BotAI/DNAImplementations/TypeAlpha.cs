@@ -1,5 +1,6 @@
-﻿using ArtificialFarm.BotAI.Genetic;
-using ArtificialFarm.FarmMap;
+﻿using System;
+using ArtificialFarm.BotAI.Genetic;
+using ArtificialFarm.Core;
 using UnityEngine;
 
 namespace ArtificialFarm.BotAI.DNAImplementations
@@ -7,7 +8,7 @@ namespace ArtificialFarm.BotAI.DNAImplementations
     public abstract class TypeAlpha : IDNA
     {
         [Gene("movement", "MOVE_FORWARD")]
-        public static void MoveForward(Bot bot)
+        public static void MoveForward(IBot bot)
         {
             var newCell = bot.Map.GetCellByMove(bot.Cell, bot.Turn);
             newCell.AdoptNewBot(bot);
@@ -15,50 +16,115 @@ namespace ArtificialFarm.BotAI.DNAImplementations
             bot.Energy -= 8;
         }
 
-        [Gene("movement", "MOVE_BACKWARD")]
-        public static void MoveBackward(Bot bot)
-        {
-            var newCell = bot.Map.GetCellByMove(bot.Cell, bot.Turn.Inverted);
-            newCell.AdoptNewBot(bot);
-            bot.Energy -= 12;
-        }
+
+        // [Gene("movement", "MOVE_BACKWARD")]
+        // public static void MoveBackward(IBot bot)
+        // {
+        //     var newCell = bot.Map.GetCellByMove(bot.Cell, bot.Turn.Inverted);
+        //     newCell.AdoptNewBot(bot);
+        //     bot.Energy -= 12;
+        // }
+
 
         [Gene("movement", "TURN_RIGHT")]
-        public static void TurnRight(Bot bot)
+        public static void TurnRight(IBot bot)
         {
             bot.Turn.TurnRight();
             bot.Energy -= 3;
         }
 
+
         [Gene("movement", "TURN_LEFT")]
-        public static void TurnLeft(Bot bot)
+        public static void TurnLeft(IBot bot)
         {
             bot.Turn.TurnLeft();
             bot.Energy -= 3;
         }
 
 
-        [Gene("eating", "PHOTOSYNTHESIS")]
-        public static void Photosynthesis(Bot bot)
+        [Gene("eating", "EATING")]
+        public static void Eating(IBot bot)
         {
-            bot.Energy += 50;
+            switch (bot.Genome.Diet)
+            {
+                case Diet.PhotoPlant:
+                    bot.Energy += 50 * bot.Cell.SunModifier;
+                    break;
+
+                case Diet.MineralsPlant:
+                    bot.Energy += 50 * bot.Cell.MineralsModifier;
+                    break;
+
+                case Diet.HerbivAnimal:
+                {
+                    var nbr = GetForwardNeighbor(bot);
+                    var nbrDiet = nbr?.Genome.Diet ?? Diet.None;
+
+                    if (nbrDiet is Diet.PhotoPlant ||
+                        nbrDiet is Diet.MineralsPlant)
+                    {
+                        float delta = nbr.Energy / 2;
+                        bot.Energy += delta;
+                        nbr.Energy -= delta;
+                    }
+
+                    break;
+                }
+
+                case Diet.PredatorAnimal:
+                {
+                    var nbr = GetForwardNeighbor(bot);
+                    var nbrDiet = nbr?.Genome.Diet ?? Diet.None;
+
+                    if (nbrDiet is Diet.HerbivAnimal ||
+                        nbrDiet is Diet.PredatorAnimal)
+                    {
+                        float delta = Mathf.Max(nbr.Energy / 2, 50);
+                        bot.Energy += delta;
+                        nbr.Energy -= delta;
+                    }
+
+                    break;
+                }
+
+                /*
+                case Diet.OmnivorAnimal:
+                {
+                    var nbr = GetForwardNeighbor(bot);
+                    var nbrDiet = nbr?.Genome.Diet ?? Diet.None;
+
+                    if (nbrDiet != Diet.None)
+                    {
+                        float delta = nbr.Energy / 3;
+                        bot.Energy += delta;
+                        nbr.Energy -= delta;
+                    }
+
+                    break;
+                }
+                */
+
+                case Diet.None:
+                    Debug.LogWarning("Diet is none for " + bot);
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            // Debug.Log($"{bot} => {bot.Genome.Diet}");
         }
 
-        [Gene("eating", "EAT_OTHER")]
-        public static void EatNeighbor(Bot bot)
+
+        private static IBot GetForwardNeighbor(IFarmObject bot)
         {
             var forwardCell = bot.Map.GetCellByMove(bot.Cell, bot.Turn);
-            var neighbor = (Bot) forwardCell.Content;
-            if (neighbor is null) return;
-
-            byte deltaEaten = (byte) Mathf.Min(neighbor.Energy, 33);
-            neighbor.Energy -= deltaEaten;
-            bot.Energy += deltaEaten;
+            return (IBot) forwardCell.Content;
         }
 
 
         [Gene("reproduction", "DIVISION_REPR")]
-        public static void DivisionReproduction(Bot bot)
+        public static void DivisionReproduction(IBot bot)
         {
             if (bot.Energy < 25 || bot.Age < 10) return;
 

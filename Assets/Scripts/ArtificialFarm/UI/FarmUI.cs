@@ -32,7 +32,8 @@ namespace ArtificialFarm.UI
 
         [SerializeField] private Text _populationField;
 
-        
+        public RectTransform graphicContainer;
+
         public Size Size => new Size(_size, _loopByX, _loopByY);
 
 

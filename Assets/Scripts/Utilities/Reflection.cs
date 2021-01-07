@@ -20,6 +20,6 @@ namespace Utilities
             assembly.GetMethods().Where(m => m.GetCustomAttributes().OfType<TAttribute>().Any());
 
 
-        public static string GetTypeName(Type t) => t.ToString().Split('.').Last();
+        public static string GetTypeName(object obj) => obj.ToString().Split('.').Last();
     }
 }

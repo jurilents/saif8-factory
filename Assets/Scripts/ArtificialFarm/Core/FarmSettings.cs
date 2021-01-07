@@ -30,5 +30,7 @@ namespace ArtificialFarm.Core
         }
 
         public static Type DefaultGenes { get; set; }
+        
+        
     }
 }

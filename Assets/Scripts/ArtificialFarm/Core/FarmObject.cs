@@ -6,7 +6,7 @@ namespace ArtificialFarm.Core
     /// <summary>
     /// Basic class for any object on the farm
     /// </summary>
-    public abstract class FarmObject
+    public abstract class FarmObject : IFarmObject
     {
         private static uint _summaryIdIter = 100;
 
@@ -14,10 +14,15 @@ namespace ArtificialFarm.Core
 
         public Population Pop { get; }
         public WorldMap Map { get; }
-        public Cell Cell { get; set; }
+        public ICell Cell { get; set; }
         public Turn Turn { get; }
 
 
+        /// <summary>
+        /// Get the color for a tile that matches the current cell
+        /// </summary>
+        /// <param name="mode">Current display mode</param>
+        /// <returns>Unity color</returns>
         public abstract Color OnDisplay(DisplayMode mode);
 
 

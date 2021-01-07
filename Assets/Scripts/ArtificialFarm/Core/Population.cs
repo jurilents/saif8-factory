@@ -24,11 +24,13 @@ namespace ArtificialFarm.Core
         /// </summary>
         public int Count => _aliveBots.Count;
 
+        // TODO: remove it
+        public int ReserveCount => _reservePool.Count;
+
 
         /// <summary>
         /// First initialisation constructor with pre-building of all bots
         /// </summary>
-        /// <param name="limit">Number of pre-build bots</param>
         public Population()
         {
             _aliveBots = new Dictionary<uint, IBot>();
@@ -49,11 +51,9 @@ namespace ArtificialFarm.Core
             foreach (var bot in _deathNote.Where(bot => _aliveBots.ContainsKey(bot.Id)))
             {
                 bot.OnDeath(null);
-                _reservePool.Enqueue(bot);
                 _aliveBots.Remove(bot.Id);
+                _reservePool.Enqueue(bot);
             }
-
-            Debug.Log("Pool:" + _reservePool.Count);
 
             _deathNote.Clear();
 
@@ -61,9 +61,12 @@ namespace ArtificialFarm.Core
             {
                 if (bot.OnBirth(parents))
                     _aliveBots.Add(bot.Id, bot);
+                else _reservePool.Enqueue(bot);
             }
 
             _birthNote.Clear();
+
+            // Debug.Log("POOL: " + _reservePool.Count);
         }
 
 
@@ -83,8 +86,11 @@ namespace ArtificialFarm.Core
             for (int i = 0; i < count; i++)
             {
                 var instance = _reservePool.Dequeue();
+                // var instance = new Bot();
                 _birthNote.Enqueue((instance, null));
             }
+
+            ApplyChanges();
         }
 
 
@@ -100,6 +106,7 @@ namespace ArtificialFarm.Core
             if (_reservePool.Count > 0)
             {
                 var instance = _reservePool.Dequeue();
+                // var instance = new Bot();
                 _birthNote.Enqueue((instance, parents));
             }
             else Debug.LogWarning("Population reserve pool is empty!");
