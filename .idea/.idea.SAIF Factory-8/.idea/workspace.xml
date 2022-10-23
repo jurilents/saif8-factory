@@ -22,41 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdab5492-d2e1-4e99-993b-0394f62500db" name="Default Changelist" comment="🛠 0.1.5-01 🛠">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Behaviours/FPSCounter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Behaviours/ProgressBar.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Editor/ToolsMenuItems.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Formatter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Logging/GameLoggingConsole.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Logging/IGameLogger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Logging/LogMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Logging/LogType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Logging/Logger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Physics2DEventBroadcaster.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/SimplexNoiseGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/UnityExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/.idea.SAIF Factory-8.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="fdab5492-d2e1-4e99-993b-0394f62500db" name="Default Changelist" comment="🛠 0.1.5-02 🛠">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/SettingsUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeMonkey/Utils/UtilsClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeMonkey/Utils/UtilsClass.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/Bot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Cell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/HexWorldMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/HexWorldMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/Size.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/WorldMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/FarmUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/FarmUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GraphTools/Graph.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/RandMe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/RandMe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +189,7 @@
       <workItem from="1654951849311" duration="3128000" />
       <workItem from="1655157717111" duration="4364000" />
       <workItem from="1666430381148" duration="1195000" />
-      <workItem from="1666542543594" duration="6406000" />
+      <workItem from="1666542543594" duration="8702000" />
     </task>
     <task id="LOCAL-00001" summary="v0.1.0">
       <created>1608795401664</created>
@@ -226,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608795401664</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="🛠 0.1.5-01 🛠">
+      <created>1666553548031</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666553548031</updated>
+    </task>
+    <task id="LOCAL-00003" summary="🛠 0.1.5-02 🛠">
+      <created>1666553598178</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666553598178</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +237,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="v0.1.0" />
     <MESSAGE value=" 0.1.5-01 " />
-    <option name="LAST_COMMIT_MESSAGE" value=" 0.1.5-01 " />
+    <MESSAGE value=" 0.1.5-02 " />
+    <option name="LAST_COMMIT_MESSAGE" value=" 0.1.5-02 " />
   </component>
 </project>

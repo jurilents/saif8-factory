@@ -60,8 +60,7 @@ namespace ArtificialFarm.BotAI.DNAImplementations
                     var nbr = GetForwardNeighbor(bot);
                     var nbrDiet = nbr?.Genome.Diet ?? Diet.None;
 
-                    if (nbrDiet is Diet.PhotoPlant ||
-                        nbrDiet is Diet.MineralsPlant)
+                    if (nbrDiet is Diet.PhotoPlant || nbrDiet is Diet.MineralsPlant)
                     {
                         float delta = nbr.Energy / 2;
                         bot.Energy += delta;
@@ -76,8 +75,7 @@ namespace ArtificialFarm.BotAI.DNAImplementations
                     var nbr = GetForwardNeighbor(bot);
                     var nbrDiet = nbr?.Genome.Diet ?? Diet.None;
 
-                    if (nbrDiet is Diet.HerbivAnimal ||
-                        nbrDiet is Diet.PredatorAnimal)
+                    if (nbrDiet is Diet.HerbivAnimal || nbrDiet is Diet.PredatorAnimal)
                     {
                         float delta = Mathf.Max(nbr.Energy / 2, 50);
                         bot.Energy += delta;
