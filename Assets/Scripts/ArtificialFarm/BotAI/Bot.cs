@@ -16,7 +16,14 @@ namespace ArtificialFarm.BotAI
         public Genome Genome { get; private set; }
 
         public ushort Age { get; private set; }
-        public float Energy { get; set; }
+
+        private float _energy;
+
+        public float Energy
+        {
+            get => _energy;
+            set => _energy = Mathf.Clamp(value, -1, 100);
+        }
 
         /// <summary>
         /// 

@@ -53,15 +53,30 @@ namespace ArtificialFarm.FarmMap
             public float InverseLinear(float x) => Linear(_limit - x);
 
 
-            public float Sigmoid(float x, float antiSmooth = 1, float xOffset = 1) =>
-                1 / (1 + Mathf.Exp(-(x * antiSmooth) + xOffset)) / _limit;
+            // public float Sigmoid(float x, float antiSmooth = 1, float xOffset = 1) =>
+            //     1 / (1 + Mathf.Exp(-(x / _limit * antiSmooth) + xOffset));
 
-            public float InverseSigmoid(float x, float antiSmooth = 1, float xOffset = 1) =>
-                Sigmoid(_limit - x, antiSmooth, xOffset);
+            // public float InverseSigmoid(float x, float antiSmooth = 1, float xOffset = 1) =>
+            //     Sigmoid(_limit - x, antiSmooth, xOffset);
 
 
-            public float ReLU(float x, float min) => Mathf.Max(0, x - _limit * min) / _limit;
-            public float InverseReLU(float x, float min) => ReLU(_limit - x, min);
+            // public float ReLU(float x, float min) => Mathf.Max(0, (x / _limit) - _limit * min);
+            // public float InverseReLU(float x, float min) => ReLU(_limit - x, min);
+
+
+            // public float Atan(float x, float kx = 1, float ky = 1) => Mathf.Atan(x / _limit - kx) + ky;
+            // public float InverseAtan(float x, float kx = 1, float ky = 1) => Atan(_limit - x, kx, ky);
+
+            public float ClampedReLU(float x, float min, float max, float minBase = 0f, float maxBase = 1f)
+            {
+                x /= _limit;
+                if (x > max) return maxBase;
+                if (x < min) return minBase;
+                return (maxBase - minBase) * (x - min) / (max - min) + minBase;
+            }
+
+            public float InverseClampedReLU(float x, float min, float max, float minBase = 0f, float maxBase = 1f) => 
+                ClampedReLU(_limit - x, min, max, minBase, maxBase);
         }
     }
 }

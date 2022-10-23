@@ -74,10 +74,10 @@ namespace ArtificialFarm.FarmMap
         /// </summary>
         public void Refresh()
         {
-            foreach (var cell in _cells)
+            foreach (ICell cell in _cells)
             {
-                var color = cell.Content?.OnDisplay(FarmSettings.DisplayMode)
-                            ?? Defaults.Transparent;
+                Color color = cell.Content?.OnDisplay(FarmSettings.DisplayMode)
+                              ?? Defaults.Transparent;
                 _tilemap.SetColor(cell.Pos, color);
             }
         }

@@ -48,11 +48,11 @@ namespace ArtificialFarm.BotAI.DNAImplementations
             switch (bot.Genome.Diet)
             {
                 case Diet.PhotoPlant:
-                    bot.Energy += 50 * bot.Cell.SunModifier;
+                    bot.Energy += 20 * bot.Cell.SunModifier;
                     break;
 
                 case Diet.MineralsPlant:
-                    bot.Energy += 50 * bot.Cell.MineralsModifier;
+                    bot.Energy += 20 * bot.Cell.MineralsModifier;
                     break;
 
                 case Diet.HerbivAnimal:

@@ -39,5 +39,15 @@ namespace ArtificialFarm.UI
 
         public void UpdateStepField(ulong step) => _stepField.text = $"{step}";
         public void UpdatePopField(int population) => _populationField.text = $"{population}";
+
+        public void Pause()
+        {
+            
+        }
+
+        public void Stop()
+        {
+            Application.Quit();
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace ArtificialFarm.FarmMap
 
         public override ICell GetCellByMove(ICell from, in Turn turn)
         {
-            var pos = from.Pos;
+            Vector3Int pos = from.Pos;
             return GetCell(pos.y % 2 == 0
                 ? turn.Side switch
                 {

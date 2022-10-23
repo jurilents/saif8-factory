@@ -34,8 +34,8 @@ namespace ArtificialFarm.FarmMap
             else
             {
                 var ms = mapSize.Value;
-                SunModifier = ms.HF.ReLU(pos.y, 0.333f);
-                MineralsModifier = ms.HF.InverseReLU(pos.y, 0.333f);
+                SunModifier = ms.HF.ClampedReLU(pos.y, 0.45f, 0.9f, 0.05f);
+                MineralsModifier = ms.HF.InverseClampedReLU(pos.y, 0.6f, 0.9f, 0.05f, 0.9f);
             }
         }
 
