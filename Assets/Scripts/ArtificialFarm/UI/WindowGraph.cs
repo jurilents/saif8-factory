@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using CodeMonkey.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -61,7 +60,7 @@ namespace ArtificialFarm.UI
             rectTransform.anchorMax = new Vector2(0, 0);
             rectTransform.sizeDelta = new Vector2(distance, 3f);
             rectTransform.anchoredPosition = dotPositionA + dir * distance * .5f;
-            rectTransform.localEulerAngles = new Vector3(0, 0, UtilsClass.GetAngleFromVectorFloat(dir));
+            // rectTransform.localEulerAngles = new Vector3(0, 0, UtilsClass.GetAngleFromVectorFloat(dir));
         }
     }
 }

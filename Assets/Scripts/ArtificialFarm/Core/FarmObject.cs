@@ -8,7 +8,7 @@ namespace ArtificialFarm.Core
     /// </summary>
     public abstract class FarmObject : IFarmObject
     {
-        private static uint _summaryIdIter = 100;
+        private static uint summaryIdIter = 100;
 
         public uint Id { get; }
 
@@ -28,7 +28,7 @@ namespace ArtificialFarm.Core
 
         protected FarmObject()
         {
-            Id = _summaryIdIter++;
+            Id = summaryIdIter++;
             Pop = FarmSettings.Current.Pop;
             Map = FarmSettings.Current.Map;
             Turn = new Turn(-1);

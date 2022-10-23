@@ -1,13 +1,15 @@
 using ArtificialFarm.UI;
 using UnityEngine;
 
- public class Master : MonoBehaviour
+public class Master : MonoBehaviour
 {
-    [SerializeField] private Farm _farm;
-    
-    private void Start()
-    {
-        _farm.Init();
-        _farm.Play();
-    }
+	[SerializeField] private Farm farm;
+
+	private void Start()
+	{
+		Screen.SetResolution(640, 480, false);
+
+		farm.Init();
+		farm.Play();
+	}
 }
