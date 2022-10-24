@@ -1,9 +1,9 @@
 namespace ArtificialFarm.FarmMap
 {
-    public enum GridOrientation
-    {
-        Square,
-        HexPointTop,
-        HexFlatTop
-    }
+	public enum GridOrientation
+	{
+		Square,
+		HexPointTop,
+		HexFlatTop
+	}
 }
