@@ -29,7 +29,7 @@ namespace ArtificialFarm.UI
 			FarmSettings.initialPopulation = (int) initialPopField.value;
 			FarmSettings.size = new Size(_sizes[mapSizeIndexField.value], loopByXField.isOn, loopByYField.isOn);
 			FarmSettings.genomeLength = uint.Parse(genomeLengthField.text);
-			FarmSettings.mutationChance = mutationChanceField.value;
+			FarmSettings.mutationChance = mutationChanceField.value / 100f;
 			FarmSettings.mutationsCount = (int) mutationsCountField.value;
 		}
 

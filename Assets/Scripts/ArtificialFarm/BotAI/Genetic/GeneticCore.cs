@@ -10,7 +10,7 @@ namespace ArtificialFarm.BotAI.Genetic
 {
 	public class GeneticCore
 	{
-		private Mutation _mutation;
+		private readonly Mutation _mutation;
 
 		private readonly Gene[] _allGenes;
 		private readonly Dictionary<ushort, Gene> _availableGenes;
@@ -99,7 +99,7 @@ namespace ArtificialFarm.BotAI.Genetic
 			for (int i = 0; i < _mutation.Count; i++)
 			{
 				if (RandMe.TryLuck(_mutation.Chance))
-					genes[RandMe.RandIndex(genes)] = RandomGeneId();
+					genes[genes.RandIndex()] = RandomGeneId();
 			}
 		}
 

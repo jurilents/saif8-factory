@@ -30,6 +30,7 @@ namespace ArtificialFarm.BotAI.Genetic
 
 			// try to mutate diet (smoothly)
 			_actuallyDiet = _dnaBase.MutateDietValue(parent._actuallyDiet, 0.1f, 0.125f);
+			Debug.Log("_actuallyDiet" + _actuallyDiet);
 			Diet = (Diet) Mathf.Clamp(_actuallyDiet, 0, 3);
 		}
 
