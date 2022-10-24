@@ -4,8 +4,8 @@ namespace ArtificialFarm.BotAI.Genetic
     {
         public bool Enabled { get; set; }
 
-        public float Chance { get; set; }
-        public int Count { get; set; }
+        public float Chance { get; }
+        public int Count { get; }
 
 
         public Mutation(float chance, int count)

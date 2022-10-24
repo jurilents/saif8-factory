@@ -7,12 +7,18 @@ namespace ArtificialFarm.Core
 {
 	public static class FarmSettings
 	{
+		public static string simulationId;
+		public static int initialPopulation;
+		public static Size size;
+		public static uint genomeLength;
+		public static float mutationChance;
+		public static int mutationsCount;
+
+
 		public static uint SummaryPopulation { get; set; }
 
 		public static Farm Current { get; internal set; }
 
-
-		// TODO: plz, review it...
 		public static DisplayMode DisplayMode { get; set; } = Defaults.DisplayMode;
 
 		internal static sbyte TileNeighborsCount

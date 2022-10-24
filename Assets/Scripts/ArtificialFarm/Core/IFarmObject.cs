@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace ArtificialFarm.Core
 {
-    public interface IFarmObject
-    {
-        Population Pop { get; }
-        WorldMap Map { get; }
+	public interface IFarmObject
+	{
+		Population Pop { get; }
+		WorldMap Map { get; }
 
-        ICell Cell { get; set; }
-        Turn Turn { get; }
+		ICell Cell { get; set; }
+		Turn Turn { get; }
 
-        Color OnDisplay(DisplayMode mode);
-    }
+		Color OnDisplay(DisplayMode mode);
+	}
 }
