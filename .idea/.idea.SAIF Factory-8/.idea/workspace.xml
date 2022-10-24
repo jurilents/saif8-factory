@@ -23,12 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdab5492-d2e1-4e99-993b-0394f62500db" name="Default Changelist" comment="🛠 0.1.5-02 🛠">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/SettingsUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SAIF Factory-8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Fonts/KellySlab-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Fonts/KellySlab-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/BotAI/DNAImplementations/TypeAlpha.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/Defaults.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/Core/FarmSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/DisplayMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/FarmMap/DisplayMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/Farm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/FarmUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/FarmUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/SettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ArtificialFarm/UI/SettingsUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Master.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Master.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +85,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Reflection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SimplexNoiseGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/UnityExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_InputField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -190,6 +197,7 @@
       <workItem from="1655157717111" duration="4364000" />
       <workItem from="1666430381148" duration="1195000" />
       <workItem from="1666542543594" duration="8702000" />
+      <workItem from="1666631016157" duration="8235000" />
     </task>
     <task id="LOCAL-00001" summary="v0.1.0">
       <created>1608795401664</created>

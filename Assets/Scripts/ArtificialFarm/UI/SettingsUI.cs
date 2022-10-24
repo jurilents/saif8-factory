@@ -1,21 +1,41 @@
+using ArtificialFarm.Core;
 using ArtificialFarm.FarmMap;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ArtificialFarm.UI
 {
 	public class SettingsUI : MonoBehaviour
 	{
-		[SerializeField] private Farm farm;
+		[SerializeField] private TMP_InputField simulationIdField;
+		[SerializeField] public Slider initialPopField;
+		[SerializeField] private TMP_Dropdown mapSizeIndexField;
+		[SerializeField] private Toggle loopByXField;
+		[SerializeField] private Toggle loopByYField;
+		[SerializeField] public TMP_InputField genomeLengthField;
+		[SerializeField] public Slider mutationChanceField;
+		[SerializeField] public Slider mutationsCountField;
 
-		[SerializeField] private string simulationId;
-		[SerializeField] private int mapSizeIndex;
-
-		private Vector2Int[] _sizes = new[]
+		private Vector2Int[] _sizes =
 		{
-			new Vector2Int(16, 32),
-			new Vector2Int(64, 180),
+			new Vector2Int(20, 20),
+			new Vector2Int(80, 60),
 		};
 
-		public void Start() { }
+		public void Apply()
+		{
+			FarmSettings.simulationId = simulationIdField.text;
+			FarmSettings.initialPopulation = (int) initialPopField.value;
+			FarmSettings.size = new Size(_sizes[mapSizeIndexField.value], loopByXField.isOn, loopByYField.isOn);
+			FarmSettings.genomeLength = uint.Parse(genomeLengthField.text);
+			FarmSettings.mutationChance = mutationChanceField.value;
+			FarmSettings.mutationsCount = (int) mutationsCountField.value;
+		}
+
+		public void SetDisplayMode(int modeIndex)
+		{
+			FarmSettings.DisplayMode = (DisplayMode) modeIndex;
+		}
 	}
 }

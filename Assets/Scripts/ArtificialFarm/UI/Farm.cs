@@ -7,6 +7,7 @@ using ArtificialFarm.BotAI.Genetic;
 using ArtificialFarm.Core;
 using ArtificialFarm.FarmMap;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Debug = UnityEngine.Debug;
 
 namespace ArtificialFarm.UI
@@ -14,6 +15,9 @@ namespace ArtificialFarm.UI
 	[RequireComponent(typeof(FarmUI))]
 	public class Farm : MonoBehaviour
 	{
+		public Tilemap tilemap;
+		public TileBase tilePrefab;
+
 		public WorldMap Map { get; private set; }
 		public Population Pop { get; private set; }
 		public Dictionary<Type, GeneticCore> Dna { get; private set; }
@@ -36,37 +40,37 @@ namespace ArtificialFarm.UI
 			FarmSettings.DisplayMode = _ui.displayMode;
 			FarmSettings.Current = this;
 
-			switch (_ui.TileOrientation)
-			{
-				case GridOrientation.Square:
-					FarmSettings.TileNeighborsCount = 4;
-					Debug.LogError("GridOrientation.Square not implement");
-					break;
-
-				case GridOrientation.HexPointTop:
-					FarmSettings.TileNeighborsCount = 6;
-					Map = new HexWorldMap(_ui.Tilemap, _ui.TilePrefab, _ui.Size);
-					break;
-
-				case GridOrientation.HexFlatTop:
-					FarmSettings.TileNeighborsCount = 6;
-					Debug.LogError("GridOrientation.HexFlatTop not implement");
-					break;
-
-				default:
-					throw new ArgumentOutOfRangeException
-							(nameof(_ui.TileOrientation), _ui.TileOrientation, null);
-			}
+			// switch (_settings.tileOrientation)
+			// {
+			// 	case GridOrientation.Square:
+			// 		FarmSettings.TileNeighborsCount = 4;
+			// 		Debug.LogError("GridOrientation.Square not implement");
+			// 		break;
+			//
+			// 	case GridOrientation.HexPointTop:
+			FarmSettings.TileNeighborsCount = 6;
+			Map = new HexWorldMap(tilemap, tilePrefab, FarmSettings.size);
+			// 		break;
+			//
+			// 	case GridOrientation.HexFlatTop:
+			// 		FarmSettings.TileNeighborsCount = 6;
+			// 		Debug.LogError("GridOrientation.HexFlatTop not implement");
+			// 		break;
+			//
+			// 	default:
+			// 		throw new ArgumentOutOfRangeException
+			// 				(nameof(_ui.tileOrientation), _ui.tileOrientation, null);
+			// }
 
 			Dna = new Dictionary<Type, GeneticCore>();
 			Pop = new Population();
-			Pop.InitBotsPool((int) (_ui.Size.Summary * 1.05f));
+			Pop.InitBotsPool((int) (FarmSettings.size.Summary * 1.05f));
 
 			InjectGenome<TypeAlpha>();
 
 			Debug.Log("Farm successfully initialized!");
 
-			Pop.Spawn<TypeAlpha>(3);
+			Pop.Spawn<TypeAlpha>((ushort) FarmSettings.initialPopulation);
 		}
 
 
@@ -75,6 +79,7 @@ namespace ArtificialFarm.UI
 		/// </summary>
 		public void Play()
 		{
+			if (_play) return;
 			Debug.Log("EVENT: Play");
 			_play = true;
 			StartCoroutine(LifeLoop());
@@ -145,8 +150,8 @@ namespace ArtificialFarm.UI
 				{
 					Debug.LogWarning("Zero population.");
 
-					GameObject obj = _ui.graphicContainer.gameObject;
-					obj.SetActive(true);
+					// GameObject obj = _ui.graphicContainer.gameObject;
+					// obj.SetActive(true);
 
 					// var graph = new GraphPanel(obj, 4500, 2);
 					// graph.SetLineColor(Color.cyan, 0);
@@ -169,10 +174,10 @@ namespace ArtificialFarm.UI
 		/// <typeparam name="TBot">class implemented IDNA interface</typeparam>
 		private void InjectGenome<TBot>() where TBot : IDNA
 		{
-			var mutation = new Mutation(_ui.mutationChance, _ui.mutationsCount);
-			if (_ui.mutationsCount > 0) mutation.Enabled = true;
+			var mutation = new Mutation(FarmSettings.mutationChance, FarmSettings.mutationsCount);
+			if (FarmSettings.mutationsCount > 0) mutation.Enabled = true;
 
-			var geneticCore = new GeneticCore(typeof(TBot), _ui.dnaLength, mutation);
+			var geneticCore = new GeneticCore(typeof(TBot), FarmSettings.genomeLength, mutation);
 			Dna.Add(typeof(TBot), geneticCore);
 		}
 	}

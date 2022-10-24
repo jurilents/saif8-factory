@@ -1,53 +1,66 @@
+using ArtificialFarm.Core;
 using ArtificialFarm.FarmMap;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 namespace ArtificialFarm.UI
 {
-    public class FarmUI : MonoBehaviour
-    {
-        [Header("Start params")] public uint startPopulation = 20;
+	public class FarmUI : MonoBehaviour
+	{
+		[Header("Start params")] public uint startPopulation = 20;
 
-        [Header("Farm map")] public DisplayMode displayMode;
+		[Header("Farm map")] public DisplayMode displayMode;
 
-        public Tilemap Tilemap;
-        public TileBase TilePrefab;
-        public GridOrientation TileOrientation;
+		[SerializeField] private Farm farm;
+		[SerializeField] private SettingsUI settingsObject;
+		[SerializeField] private Canvas settingsCanvas;
+		[SerializeField] private Slider speedSlider;
+		[SerializeField] private Text stepField;
+		[SerializeField] private Text populationField;
 
-        [SerializeField] private Vector2Int _size = new Vector2Int(20, 16);
-        [SerializeField] private bool _loopByX;
-        [SerializeField] private bool _loopByY;
+		// public RectTransform graphicContainer;
 
-        [Header("Genome DNA")] public uint dnaLength = 16;
+		public void UpdateStepField(ulong step) => stepField.text = $"{step}";
+		public void UpdatePopField(int population) => populationField.text = $"{population}";
 
-        [Header("Mutations")] [InspectorName("Chance")] [Range(0, 1f)]
-        public float mutationChance = 0.1f;
+		public void Run()
+		{
+			settingsObject.Apply();
+			settingsCanvas.gameObject.SetActive(false);
 
-        [InspectorName("Count")] [Range(0, 10)]
-        public int mutationsCount = 1;
+			farm.Init();
+			farm.Play();
+		}
 
-        [Header("User Interface Panel")] [SerializeField]
-        private Text _stepField;
+		private float[] stepDeltas =
+		{
+			0,
+			0.1f,
+			0.03f,
+			0.0125f,
+			0.005f,
+			0.0025f,
+		};
 
-        [SerializeField] private Text _populationField;
+		public void OnSpeedChange()
+		{
+			int speed = (int) speedSlider.value;
+			if (speed == 0)
+			{
+				farm.Pause();
+			}
+			else
+			{
+				farm.Play();
+				FarmSettings.StepWaitingTime = new WaitForSeconds(stepDeltas[speed]);
+			}
+		}
 
-        public RectTransform graphicContainer;
+		public void Pause() { }
 
-        public Size Size => new Size(_size, _loopByX, _loopByY);
-
-
-        public void UpdateStepField(ulong step) => _stepField.text = $"{step}";
-        public void UpdatePopField(int population) => _populationField.text = $"{population}";
-
-        public void Pause()
-        {
-            
-        }
-
-        public void Stop()
-        {
-            Application.Quit();
-        }
-    }
+		public void Stop()
+		{
+			settingsCanvas.gameObject.SetActive(true);
+		}
+	}
 }
